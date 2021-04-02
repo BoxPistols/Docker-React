@@ -1,13 +1,17 @@
-# Docker Rails
+# Docker React
 
-[参考Youtube](https://youtu.be/8UVRsJnD3Cc)
+- [Example Youtube](https://youtu.be/8UVRsJnD3Cc)
+[Docker上にReact+TypeScriptの環境を構築](https:/- /saitoblog.page/posts/2020-11-15)
 
-# Do Command
+---
 
-- wakeup docker:
-    - docker-compose up
-- login on docker:
-    - docker-compose exec front sh
-- create react with TypeScript: on docker front/
-    - npx create-react-app . --template typescrip
-    -  yarnpkg add --exact react react-dom react-scripts cra-template-typescript
+## Setting
+
+- Create
+  - docker-compose build
+  - docker-compose run --rm frontend sh -c 'npx create-react-app frontend --template typescript'
+- Move
+  - docker-compose up -d
+  - docker-compose ps
+- in docker:
+  - docker-compose exec frontend sh

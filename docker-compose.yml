@@ -1,11 +1,13 @@
-version: "3.7"
+version: '3'
+
 services:
-  front:
-    build:
-      context: .
-      dockerfile: Dockerfile
+  frontend:
+    build: .
+    environment:
+      - NODE_ENV=development
     volumes:
-      - ./front:/front
-    working_dir: /front
-    command: node
-    tty: truedddllll
+      - ./:/usr/src/app
+    command: sh -c 'cd frontend && yarn start'
+    ports:
+      - '3000:3000'
+    tty: true
