@@ -1,0 +1,3 @@
+# FROM node:12.16.1-alpine3.9
+FROM alpine:3.10
+ENV NODE_VERSION 14.16.0
