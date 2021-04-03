@@ -4,5 +4,8 @@
     "source.fixAll.eslint": true // <-- eslintでリント
   },
   // デフォルトフォーマッタをprettierに
-  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  "editor.defaultFormatter": "rvest.vs-code-prettier-eslint",
+  "[scss]": {
+    "editor.defaultFormatter": "sasa.vscode-sass-format"
+  }
 }
