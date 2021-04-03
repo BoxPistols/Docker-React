@@ -75,9 +75,24 @@
 
 ### With Sider
 
-3rdParty Tool
+- 3rdParty Tool
+- Not Use...
 
 - https://sider.review/dashboard
 - https://sider.review/gh/repos/354124010/pulls/1#tools
 
 - `npm install eslint-plugin-testing-library@latest --save-dev`
+
+---
+
+## Base Setting Fix
+
+- Local React
+- Link ↑↓
+- Docker React
+- ESLint
+- Prettier
+
+commit `b6f3bae167f552b46b57185ecba0bc29a1b80eeb`
+
+---
