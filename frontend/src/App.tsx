@@ -10,7 +10,7 @@ const useStyles = makeStyles((theme) => ({
     flexGrow: 1,
   },
   paper: {
-    padding: theme.spacing(2),
+    padding: theme.spacing(4),
     textAlign: 'center',
     color: theme.palette.text.secondary,
   },
@@ -24,9 +24,15 @@ export const App: FC<Props> = () => {
     <div className='App'>
       <Container maxWidth='sm' className='container'>
         <div className={classes.root}>
-          <Grid container spacing={8} direction='column' justify='center' alignItems='center'>
-            <Grid item xs={8}>
-              <Paper className={classes.paper}>{count}</Paper>
+          {/* <Grid container spacing={10} direction='column' justify='center' alignItems='center'> */}
+          <Grid container spacing={10} justify='center' alignItems='center'>
+            <Grid item xs={2}>
+              Side
+            </Grid>
+            <Grid item xs={10}>
+              <Paper className={classes.paper}>
+                <h2>{count}</h2>
+              </Paper>
               <Paper className={classes.paper}>
                 <Button
                   variant='contained'
