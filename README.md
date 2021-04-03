@@ -11,27 +11,26 @@
 
 - Create
 
-  - docker-compose build
-  - docker-compose run --rm frontend sh -c 'npx create-react-app frontend --template typescript'
+  - `docker-compose build`
+  - `docker-compose run --rm frontend sh -c 'npx create-react-app frontend --template typescript'`
 
 - Move
 
-  - docker-compose up -d
-  - docker-compose ps
+  - `docker-compose up -d`
+  - `docker-compose ps`
 
 - Work in docker
 
-  - docker-compose exec frontend sh
-
-- remove .git on /usr/src/app
-  - /usr/src/app # rm -rf .git
+  - `docker-compose exec frontend sh`
 
 ---
 
-### ESLint
+## Test ESLint
+
+### install ESLint
 
 - install in frontend/
-  - npx eslint --init
+  - `npx eslint --init`
     - Select One
       - > How would you like to use ESLint?
         - To check syntax, find problems, and enforce code style
@@ -54,11 +53,31 @@
       - > Would you like to install them now with npm?
         - Yes
 
+### Move ESLint
+
+- Lint Check
+  - `npx eslint --fix src/**/*.ts*`
+- Has error
+
+  - `yarn add --dev eslint eslint-plugin-jest`
+  - .eslintrc.js
+    - add plugin 'jest'
+    - add ENV "jest/globals": true
+  - `yarn add -D eslint prettier eslint-config-prettier`
+
+- ... And More ...
+    - https://qiita.com/sprout2000/items/ee4fc97f83f45ba1d227
+    - http://watanabeyu.blogspot.com/2019/02/typescript-eslinttypescriptlinteslintai.html
+
+- yarn add -D eslint-import-resolver-webpack
+
 ---
 
-## With Sider
+### With Sider
 
-https://sider.review/dashboard
-https://sider.review/gh/repos/354124010/pulls/1#tools
+3rdParty Tool
 
-- npm install eslint-plugin-testing-library@latest --save-dev
+- https://sider.review/dashboard
+- https://sider.review/gh/repos/354124010/pulls/1#tools
+
+- `npm install eslint-plugin-testing-library@latest --save-dev`
