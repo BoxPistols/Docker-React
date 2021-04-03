@@ -53,3 +53,12 @@
         - JavaScript
       - > Would you like to install them now with npm?
         - Yes
+
+---
+
+## With Sider
+
+https://sider.review/dashboard
+https://sider.review/gh/repos/354124010/pulls/1#tools
+
+- npm install eslint-plugin-testing-library@latest --save-dev
