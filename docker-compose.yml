@@ -2,12 +2,25 @@ version: '3'
 
 services:
   frontend:
-    build: .
-    environment:
-      - NODE_ENV=development
+    # New
+    build:
+      context: .
+      dockerfile: Dockerfile
     volumes:
-      - ./:/usr/src/app
-    command: sh -c 'cd frontend && yarn start'
-    ports:
-      - '3000:3000'
+      - ./frontend:/frontend
+    working_dir: /frontend
+    command: yarn run start
     tty: true
+    ports:
+      - 3000:3000
+
+    ### Old
+    # build: .
+    # environment:
+    #   - NODE_ENV=development
+    # volumes:
+    #   - ./:/usr/src/app
+    # command: sh -c 'cd frontend && yarn start'
+    # ports:
+    #   - '3000:3000'
+    # tty: true
