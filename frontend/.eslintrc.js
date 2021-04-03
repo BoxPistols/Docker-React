@@ -5,7 +5,15 @@ module.exports = {
     es6: true,
     'jest/globals': true,
   },
-  extends: ['plugin:react/recommended', 'airbnb', 'eslint:recommended', 'prettier'],
+  extends: [
+    'airbnb',
+    'plugin:react/recommended',
+    'plugin:@typescript-eslint/eslint-recommended',
+    'eslint:recommended',
+
+    'plugin:prettier/recommended',
+    'prettier',
+  ],
   // パーサー
   parser: '@typescript-eslint/parser',
   // jsxにお利用
@@ -18,7 +26,7 @@ module.exports = {
     sourceType: 'module',
   },
   plugins: ['react', 'react-hooks', '@typescript-eslint', 'jest'],
-  // React のバージョンは自動検出
+  // React のバージョン自動検出
   settings: {
     react: {
       version: 'detect',
@@ -27,8 +35,10 @@ module.exports = {
     'import/parsers': {
       '@typescript-eslint/parser': ['.ts', '.tsx'],
     },
+    // 拡張子ts/tsxファイルインポートの解釈
     'import/resolver': {
       node: {
+        paths: ['src'],
         extensions: ['.js', '.jsx', '.ts', '.tsx'],
       },
       // "webpack": {
@@ -37,15 +47,24 @@ module.exports = {
     },
   },
   rules: {
+    'prettier/prettier': 'error',
+    // 名前付きexportの使用を許容
+    'import/prefer-default-export': 'off',
     '@typescript-eslint/prefer-interface': 'off',
     'import/no-unresolved': 'off',
     // TypeScirpt なので prop-types は不要
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
-    'react/jsx-filename-extension': [1, { extensions: ['.tsx', '.ts'] }],
+    // JSXを含むファイルの拡張子を制限
+    'react/jsx-filename-extension': [
+      'error',
+      {
+        extensions: ['.jsx', '.tsx'],
+      },
+    ],
+    // 拡張子ts/tsxファイルインポートの解釈
     'import/extensions': [
       'error',
-      'ignorePackages',
       {
         js: 'never',
         jsx: 'never',
